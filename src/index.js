@@ -30,7 +30,7 @@
 // console.log(multiplyTwoNumbersWillBeEqualSumOfFromOneToNExceptTwoInputValues(4, 1, 2))
 
 
-//5.
+//5. not finished
 let ticTacToeBoard = [
     [0,0,0],
     [0,0,0],
@@ -70,20 +70,10 @@ document.body.addEventListener("click", (e) => {
         console.log(ticTacToeBoard)
         document.getElementById("player").innerHTML = "secondPlayer"
        
-        ticTacToeBoard.forEach((item ) => {
-            if(item.indexOf(0) === -1) {
-                GameEnd = true;
-            } else {
-                GameEnd = false;
-            }
-        })
-        if(GameEnd) {
-            document.write("game is ended please reload ",str);
-            return;
-        }
+    
         
         ticTacToeBoard.forEach((item,index ) => {
-            let count = 0;
+           
             if(item.indexOf("X") !== -1 && item.indexOf("0") === -1 && item.indexOf(0) === -1 ) {
                 GameEnd = true;
                 str = "firstPlayer win"
@@ -97,7 +87,7 @@ document.body.addEventListener("click", (e) => {
             
                      
            })
-           console.log("count",count)
+           
             
             
         })
