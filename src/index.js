@@ -30,118 +30,144 @@
 // console.log(multiplyTwoNumbersWillBeEqualSumOfFromOneToNExceptTwoInputValues(4, 1, 2))
 
 
-//5. not finished
-let ticTacToeBoard = [
-    [0,0,0],
-    [0,0,0],
-    [0,0,0]
-]
-let firstOrSecond = 0;
-let firstPlayer = {
-    sign: "X",
-    row: undefined,
-    column: undefined,
-}
-let secondPlayer = {
-    sign: "0",
-    row: undefined,
-    column: undefined,
-}
-GameEnd = false;
-let str = ""
+//5. 
+// let ticTacToeBoard = [
+//     [0,0,0],
+//     [0,0,0],
+//     [0,0,0]
+// ]
+// let firstOrSecond = 0;
+// let firstPlayer = {
+//     sign: "X",
+//     row: undefined,
+//     column: undefined,
+// }
+// let secondPlayer = {
+//     sign: "0",
+//     row: undefined,
+//     column: undefined,
+// }
 
 
-document.body.addEventListener("click", (e) => {
-    console.log(e.target.id)
-    console.log(e.target.parentNode.id)
-    console.log("gameend",GameEnd)
-    if(GameEnd) {
-        document.write("game is ended please reload");
-        return;
-    }
-    if(firstOrSecond === 0) {
-        if(ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] !== 0) {
-            return;
-        }
-        ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] = firstPlayer.sign;
-        document.getElementById(e.target.id).innerHTML = firstPlayer.sign;
-        console.log("first")
-        firstOrSecond = 1;
-        console.log(ticTacToeBoard)
-        document.getElementById("player").innerHTML = "secondPlayer"
+// function checkFreePlaces (arr) {
+//     let bool = true
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i].indexOf(0) !== -1) {
+//             return true;
+//         }
+//         else {
+//             bool = false
+//         }
+//     }
+//     return bool;
+// }
+
+// function checkFirstPlayerwin(arr) {
+//     let sideCount = 0;
+//     let sideCountR = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         let count = 0;
+        
+//         if(arr[i].indexOf("X") !== -1  && arr[i].indexOf("0") === -1 && arr[i].indexOf(0) === -1  ) {
+//             return true;
+//         }
+//         for(let j = 0; j < arr.length; j++) {
+//             if(arr[j][i] === "X") {
+//                 count++;
+//             }
+//             if(i === j && arr[i][j] === "X") {
+//                 console.log("arr[i][j]",arr[i][j])
+//                 sideCount++
+//             }
+//             if(i + j === 2 && arr[i][j] === "X" ) {
+//                  sideCountR++
+//             }
+//         }
+//         if(count === 3) {
+//             return true;
+//         }
+//         if(sideCount === 3) {
+//             return true;
+//         }
+//         if(sideCountR === 3) {
+//             return true;
+//         }
+//         console.log("sidecount", sideCount)
+//     }
+// }
+// function checkSecondPlayerwin(arr) {
+//     let sideCount = 0;
+//     let sideCountR = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         let count = 0
+//         if(arr[i].indexOf("0") !== -1  && arr[i].indexOf("X") === -1 && arr[i].indexOf(0) === -1  ) {
+//             return true;
+//         }
+//         for(let j = 0; j < arr.length; j++) {
+//             if(arr[j][i] === "0") {
+//                 count++;
+//             }
+//             if(i === j && arr[i][j] === "0") {
+//                 console.log("arr[i][j]",arr[i][j])
+//                 sideCount++
+//             }
+//             if(i + j === 2 && arr[i][j] === "0" ) {
+//                 sideCountR++
+//            }
+            
+//         }
+//         if(count === 3) {
+//             return true;
+//         }
+//         if(sideCount === 3) {
+//             return true;
+//         }
+//         if(sideCountR === 3) {
+//             return true;
+//         }
+        
+//     }
+// }
+
+// document.body.addEventListener("click", (e) => {
+//     console.log(e.target.id)
+//     console.log(e.target.parentNode.id)
+//     if(firstOrSecond === 0) {
+//         if(ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] !== 0) {
+//             return;
+//         }
        
-    
-        
-        ticTacToeBoard.forEach((item,index ) => {
-           
-            if(item.indexOf("X") !== -1 && item.indexOf("0") === -1 && item.indexOf(0) === -1 ) {
-                GameEnd = true;
-                str = "firstPlayer win"
-                document.write("game is ended please reload ",str);
-                return;
-            } else {
-                str = "draw"
-                GameEnd = false;
-            }
-           item.forEach((item2,index2) => {
-            
-                     
-           })
-           
-            
-            
-        })
+//         ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] = firstPlayer.sign;
+//         document.getElementById(e.target.id).innerHTML = firstPlayer.sign;
+//         document.getElementById("player").innerHTML = "second player"
 
+//         if(checkFirstPlayerwin(ticTacToeBoard)) {
+//             document.write("game was ended first player win")
+//         }
+//         if(!checkFreePlaces(ticTacToeBoard)) {
+//             document.write("game was ended draw")
+//         }
+//     }
+//     if(firstOrSecond === 1) {
+//         if(ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] !== 0) {
+//             return;
+//         }
 
         
-        return;
-    } 
-    if (firstOrSecond === 1) {
-        if(ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] !== 0) {
-            return;
-        }
-        ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] = secondPlayer.sign; 
-        console.log("second")
-        console.log(ticTacToeBoard)
-        firstOrSecond = 0;
-        document.getElementById(e.target.id).innerHTML = secondPlayer.sign;
-        document.getElementById("player").innerHTML = "firstPlayer"
-        
-        ticTacToeBoard.forEach((item ) => {
-            if(item.indexOf(0) === -1) {
-                GameEnd = true;
-            } else {
-                GameEnd = false;
-            }
-        })
-        if(GameEnd) {
-            document.write("game is ended please reload",str);
-            return;
-        }
-     
-       
-        ticTacToeBoard.forEach((item ) => {
-            if(item.indexOf("0") !== -1 && item.indexOf("X") === -1 && item.indexOf(0) === -1 ) {
-                GameEnd = true;
-                str = "secondPlayer win"
-                document.write("game is ended please reload",str);
-                return;
-            } else {
-                str = "draw"
-                GameEnd = false;
-            }
-           item.forEach(item2 => {
 
-           })
-            
-        })
+//         ticTacToeBoard[Number(e.target.parentNode.id.split(":")[1])][Number(e.target.id.split(":")[1])] = secondPlayer.sign;
+//         document.getElementById(e.target.id).innerHTML = secondPlayer.sign;
+//         document.getElementById("player").innerHTML = "first player"
 
-        
-        return;
-    }
+//         if(checkSecondPlayerwin(ticTacToeBoard)) {
+//             document.write("game was ended second player win")
+//         }
+//         if(!checkFreePlaces(ticTacToeBoard)) {
+//             document.write("game was ended draw")
+//         }
+//     }
    
-    //console.log(ticTacToeBoard)
-})
+//     firstOrSecond === 1? firstOrSecond = 0:firstOrSecond = 1;
+// })
 
 
-console.table(ticTacToeBoard)
