@@ -142,10 +142,10 @@
 //         document.getElementById("player").innerHTML = "second player"
 
 //         if(checkFirstPlayerwin(ticTacToeBoard)) {
-//             document.write("game was ended first player win")
+//            return document.write("game was ended first player win")
 //         }
 //         if(!checkFreePlaces(ticTacToeBoard)) {
-//             document.write("game was ended draw")
+//           return  document.write("game was ended draw")
 //         }
 //     }
 //     if(firstOrSecond === 1) {
@@ -160,10 +160,10 @@
 //         document.getElementById("player").innerHTML = "first player"
 
 //         if(checkSecondPlayerwin(ticTacToeBoard)) {
-//             document.write("game was ended second player win")
+//           return  document.write("game was ended second player win")
 //         }
 //         if(!checkFreePlaces(ticTacToeBoard)) {
-//             document.write("game was ended draw")
+//             return document.write("game was ended draw")
 //         }
 //     }
    
